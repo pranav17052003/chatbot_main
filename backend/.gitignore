@@ -1,0 +1,30 @@
+# Python/Django
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+env/
+venv/
+virtualenv/
+*.env
+
+# Django specific
+media/
+staticfiles/
+*.log
+
+# React/Node
+node_modules/
+dist/
+build/
+*.lock
+
+# macOS
+.DS_Store
+
+# IDEs
+.idea/
+*.iml
+.vscode/
