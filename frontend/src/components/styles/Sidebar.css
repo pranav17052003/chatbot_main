@@ -1,0 +1,125 @@
+.sidebar{
+    position: fixed;
+    left: 0%;
+    width: 12.5%;
+    height: 100%;
+    background-color: #222;
+    padding: 20px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.sidebar-1 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0%;
+}
+
+.sidebar-2 {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    overflow: hidden; /* Prevent overflow */
+    flex-wrap: wrap; /* Allow wrapping if content exceeds width */
+}
+.logo h2 {
+    font-size: 1.2em; /* Relative size for scalability */
+    margin: 0;
+    white-space: nowrap; /* Prevent text wrapping within h2 */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+}
+
+
+.nav{
+    overflow: hidden;
+}
+.nav p {
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 0px;
+}
+
+.nav p:hover {
+    background-color: #333;
+}
+
+
+.new-chat {
+    text-decoration: none;
+    /* Remove underline */
+    color: inherit;
+    /* Inherit text color from parent */
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    font-size: 13.9px;
+    align-items: center;
+    gap: 5px;
+    padding: 0%;
+    height: 4px;
+}
+
+
+.sidebar-2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar-middle{
+    margin-top: 0;
+    overflow: hidden;
+}
+
+
+
+
+.sidebar-example-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    gap: 10px;
+    height: 300px; /* Fixed height */
+    overflow: hidden; /* Hide overflow from bottom */
+}
+.sidebar-example-list ul li {
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+}
+
+
+.sidebar-example-list ul li span { padding-right: 2px; font-size: 13px; }
+
+.sidebar-example-list ul li:hover {
+    background-color: #333;
+}
+
+
+
+
+
+
+
+
+
+
+

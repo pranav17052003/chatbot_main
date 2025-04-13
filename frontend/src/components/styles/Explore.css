@@ -1,0 +1,52 @@
+.explore-box{
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+}
+
+.your-models{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.explore-models{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.card-box{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.card-box:hover {
+    transform: scale(1.05); /* Slightly enlarge the card */
+    background-color: #3c3c3c; /* Darker shade on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
+    cursor: pointer; /* Change cursor to indicate interactivity */
+}
+
+
+
+
+
+
+
+
+
