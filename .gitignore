@@ -60,3 +60,4 @@ frontend/
 backend/env
 node_modules/
 *.log
+backend/websocket_django/websocket_django/sonata-sarthi-0adb780ba337.json
