@@ -103,20 +103,31 @@ class ChatConsumer(WebsocketConsumer):
         if match:
             self.query_result = match.group(1)
             print("hwalfjdlj",self.query_result)
+        else :
+            self.query_result = "No query found"
         print(f"Time taken for response generation by our AI MODEL : {(end_time_1 - start_time_1).total_seconds()} seconds")
         
         # -------------------------------------- executing the query in big data -------------------------------------
         start_time_2 = datetime.now()
-        db_results = self.bq_client.query(self.query_result).to_dataframe()
-        output =  db_results.head(5).to_html(index=False)
-        db_results_1 = db_results.head(5)
-        interpreter_input = f"Database results for top 5 results also add a line that says for complete data downloand the file.: {db_results_1.to_json(orient='records')}"
-        interpreter_response = self.chat1.send_message([interpreter_input, message])
-        ai_response = interpreter_response.text
-        print("HELLO \n",type(ai_response))
-        end_time_2 = datetime.now()
-        print(f"Time taken for response generation by big query: {(end_time_2 - start_time_2).total_seconds()} seconds")
-        output = output + "\n\n" + ai_response
+        if(self.query_result != "No query found"):
+            db_results = self.bq_client.query(self.query_result).to_dataframe()
+            output =  db_results.head(5).to_html(index=False)
+            db_results_1 = db_results.head(5)
+            interpreter_input = f"Database results: {db_results_1.to_json(orient='records')}"
+            interpreter_response = self.chat1.send_message([interpreter_input, message])
+            ai_response = interpreter_response.text
+            print("HELLO \n",type(ai_response))
+            end_time_2 = datetime.now()
+            print(f"Time taken for response generation by big query: {(end_time_2 - start_time_2).total_seconds()} seconds")
+            output = output + "\n\n" + ai_response
+        else:
+            interpreter_input = f"question : {message}"
+            interpreter_response = self.chat1.send_message([interpreter_input, message])
+            ai_response = interpreter_response.text
+            print("HELLO \n",type(ai_response))
+            end_time_2 = datetime.now()
+            print(f"Time taken for response generation by big query: {(end_time_2 - start_time_2).total_seconds()} seconds")
+            output =  ai_response
             
        
         response = json.dumps({
