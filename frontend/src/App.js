@@ -20,7 +20,7 @@ function App() {
   const [activeView, setActiveView] = useState("chat");
   const [showPopUp, setshowPopUp] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   // Check authentication status on app load
   useEffect(() => {
