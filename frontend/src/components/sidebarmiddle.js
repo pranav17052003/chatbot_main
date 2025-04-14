@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./styles/sweetalert2.css";
+// import "./styles/sweetalert2.css";
 import "./styles/main.css";
 import { faCopy } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
