@@ -88,6 +88,8 @@ function Sidebar({ setActiveView, setshowPopUp, setIsAuthenticated }) {
           >
             Settings
           </h5>
+        </div>
+        <div className="sidebar-2">
           <button
             onClick={handleLogout}
             className="logout-button"

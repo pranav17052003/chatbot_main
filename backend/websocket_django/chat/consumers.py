@@ -162,7 +162,7 @@ class ChatConsumer(WebsocketConsumer):
         FROM 
             `sonata-sarthi.Customer_Scrub_Data.daily_questions`
         WHERE 
-            DATE(timestamp) = DATE_SUB(CURRENT_DATE(), INTERVAL 2 DAY)
+            DATE(timestamp) = DATE_SUB(CURRENT_DATE(), INTERVAL 0 DAY)
         LIMIT 100
         """
         try:

@@ -185,6 +185,59 @@
   font-size: 1.5rem;
 }
 
+/* Add this to your Sidebar.css or main CSS file */
+.logout-button {
+  background-color: #ff4d4d; /* Red color for logout action */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  margin: 10px 0;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logout-button:hover {
+  background-color: #e60000; /* Darker red on hover */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.logout-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logout-button:disabled {
+  background-color: #ff9999; /* Lighter red when disabled */
+  cursor: not-allowed;
+  transform: none;
+  opacity: 0.7;
+}
+
+/* Optional: Add spinner for loading state */
+.logout-button:disabled::after {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
 
 
 
