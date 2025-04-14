@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'chat',  # Add your app to INSTALLED_APPS
     'daphne',
-    'channels'
+    'channels',
+    'corsheaders',
 ]
 
 
@@ -61,6 +62,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = "websocket_django.urls"
@@ -135,3 +137,23 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# Add this at the bottom of the file
+# Authentication settings
+LOGIN_URL = '/login/'  # URL to redirect to if user is not authenticated
+LOGIN_REDIRECT_URL = '/'  # URL to redirect to after login
+LOGOUT_REDIRECT_URL = '/login/'  # URL to redirect to after logout
+
+# Session settings (for keeping users logged in)
+SESSION_COOKIE_AGE = 1209600  # 2 weeks in seconds (optional)
+SESSION_SAVE_EVERY_REQUEST = True  # Save the session to the database on every request
+
+# For Channels (if you're using WebSockets)
+ASGI_APPLICATION = 'websocket_django.asgi.application'
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+]
+
+CORS_ALLOW_CREDENTIALS = True
